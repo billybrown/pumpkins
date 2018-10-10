@@ -12,9 +12,23 @@ Halloween makey makey project
 * Speaker?
 
 ## Next steps
-* Make Javascript page
-* ...
+* Make Javascript Sound-Pumpkin-board
+* Proto-Pumpkin-type
+* Instrument Brainstorm Sesh
+* Recording Sesh
+* Update Sound-Pumpkin-board
+* Plug in the pumpkins and jam
+* Pracice halloween songs on pumpkins
+* Jam so hard
+* Go on tour?
 
 ## Set List:
 * Monster Mash
 * Ghostbuster's Theme
+
+## Instrument Ideas:
+* Drums
+* Piano
+* Halloween Noises
+* Guitar?
+* Theremin?
