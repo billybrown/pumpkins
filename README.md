@@ -18,7 +18,7 @@ Halloween makey makey project
 * Recording Sesh
 * Update Sound-Pumpkin-board
 * Plug in the pumpkins and jam
-* Pracice halloween songs on pumpkins
+* Practice halloween songs on pumpkins
 * Jam so hard
 * Go on tour?
 
