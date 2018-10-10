@@ -14,3 +14,7 @@ Halloween makey makey project
 ## Next steps
 * Make Javascript page
 * ...
+
+## Set List:
+* Monster Mash
+* Ghostbuster's Theme
