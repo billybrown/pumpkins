@@ -3,13 +3,90 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  	<title>Pumpkin Jams</title>
-  	<script src="/pumpkin.js"></script>
+    <title>Pumpkin Jams</title>
+    <script src="/pumpkin.js"></script>
     <meta name="description" content="Make Time Club - Halloween Edition">
+
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 15px;
+      }
+      th {
+        text-align: left;
+      }
+      table {
+        border-spacing: 20px;
+      }
+    </style>
+
   </head>
+
   <body>
-    <h1>Pumpkin Jams</h1>
-    <p>Mandolin keys: w, a, s, d</p>
-    <p>Drum keys: left, right, up, down</p>
+    <h1 id="band_name">Pumpkin Jams</h1>
+
+    <table>
+      <tr>
+        <th>left</th>
+        <th>right</th>
+        <th>up</th>
+        <th>down</th>
+        <th>space</th>
+      </tr>
+      <tr>
+        <td>
+          <select class="menu" id="select_left"/>
+        </td>
+        <td>
+          <select class="menu" id="select_right"/>
+        </td>
+        <td>
+          <select class="menu" id="select_up"/>
+        </td>
+        <td>
+          <select class="menu" id="select_down"/>
+        </td>
+        <td>
+          <select class="menu" id="select_space"/>
+        </td>
+      </tr>
+    </table>
+
+    </br>
+    
+    <table>
+      <tr>
+        <th>w</th>
+        <th>a</th> 
+        <th>s</th>
+        <th>d</th>
+        <th>f</th>
+        <th>g</th>
+      </tr>
+      <tr>
+        <td>
+          <select class="menu" id="select_w"/>
+        </td>
+        <td>
+          <select class="menu" id="select_a"/>
+        </td>
+        <td>
+          <select class="menu" id="select_s"/>
+        </td>
+        <td>
+          <select class="menu" id="select_d"/>
+        </td>
+        <td>
+          <select class="menu" id="select_f"/>
+        </td>
+        <td>
+          <select class="menu" id="select_g"/>
+        </td>
+      </tr>
+    </table>
+
   </body>
 </html>

@@ -1,40 +1,53 @@
 
+window.onload = function () {
+	var sounds = [
+	"mandolin/Am", "mandolin/C", "mandolin/D", "mandolin/D7", "mandolin/Am",
+	"drums/Kick2", "drums/Snare2", "drums/HiHatClosed", "drums/CymbalCrash", "drums/CymbalRide", "drums/SnareSideStick"];
+
+	// populate menus with sound options
+	var menus = document.getElementsByClassName("menu");
+	for (var m = 0; m < menus.length; m++) { 
+		var menu = menus[m];
+		for (var i = 0; i < sounds.length; i++) { 
+			var option = document.createElement("option");
+			option.text = sounds[i];
+			menu.options.add(option, i);
+		}
+		menu.selectedIndex = m;
+	}
+
+	var bandNames = ["Touch the Pumpkins", "Pumpkin Parade", "Pumpkin Chuckin'", "Smacking Pumpkins", "The Pumpkings"];
+	var bandIndex = Math.floor(Math.random() * Math.floor(bandNames.length));
+	document.getElementById("band_name").innerHTML = bandNames[bandIndex];
+}
+
 document.onkeydown = checkKey;
 
 function checkKey(e) {
-	var mandolin_Am = new Audio('sounds/mandolin/mandolin_Am.mp3');
-	var mandolin_C = new Audio('sounds/mandolin/mandolin_C.mp3');
-	var mandolin_D = new Audio('sounds/mandolin/mandolin_D.mp3');
-	var mandolin_D7 = new Audio('sounds/mandolin/mandolin_D7.mp3');
-
-	var drums_kick = new Audio('sounds/drums/Kick.mp3');
-	var drums_snare = new Audio('sounds/drums/Snare.mp3');
-	var drums_hihat = new Audio('sounds/drums/HiHatClosed.mp3');
-	var drums_crash = new Audio('sounds/drums/CymbalCrash.mp3');
-
 	e = e || window.event;
 
+	var id = "";
 	//console.log(e.keyCode);
 	switch (e.keyCode) {
 		case 38:
 			console.log('up');
-			drums_kick.play();
+			id = "select_up";
 			break;
 		case 40:
 			console.log('down');
-			drums_snare.play();
+			id = "select_down";
 			break;
 		case 37:
 			console.log('left');
-			drums_hihat.play();
+			id = "select_left";
 			break;
 		case 39:
 			console.log('right');
-			drums_crash.play();
+			id = "select_right";
 			break;
 		case 32:
-			console.log('space bar');
-
+			console.log('space');
+			id = "select_space";
 			break;
 		case 13:
 			console.log('enter');
@@ -42,28 +55,37 @@ function checkKey(e) {
 			break;
 		case 87:
 			console.log('w');
-			mandolin_Am.play();
+			id = "select_w";
 			break;
 		case 65:
 			console.log('a');
-			mandolin_C.play();
+			id = "select_a";
 			break;
 		case 83:
 			console.log('s');
-			mandolin_D.play();
+			id = "select_s";
 			break;
 		case 68:
 			console.log('d');
-			mandolin_D7.play();
+			id = "select_d";
 			break;
 		case 70:
 			console.log('f');
-
+			id = "select_f";
 			break;
 		case 71:
 			console.log('g');
-
+			id = "select_g";
 			break;
+	}
+
+	if (id.length > 0)
+	{
+		elem = document.getElementById(id);
+		var soundName = elem.options[elem.selectedIndex].text;
+		console.log(soundName);
+		var sound = new Audio('sounds/' + soundName + '.mp3');
+		sound.play();
 	}
 }
 

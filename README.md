@@ -51,11 +51,4 @@ Halloween Makey Makey project
 * The Devil Went Down to Georgia
 * Psycho Killer by Talking Heads
 * Werewolf Bar Mitzvah by Tracy Morgan 
-
-
-## Band Names
-
-* Touch the Pumpkins
-* Pumpkin Parade
-* Pumpkin Chuckin'
-* #NotAllPumpkins
+* Hey Ya by Outkast
