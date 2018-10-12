@@ -2,7 +2,7 @@
 window.onload = function () {
 	var sounds = [
 	"mandolin/Am", "mandolin/C", "mandolin/D", "mandolin/D7", "mandolin/Am",
-	"drums/Kick2", "drums/Snare2", "drums/HiHatClosed", "drums/CymbalCrash", "drums/CymbalRide", "drums/SnareSideStick"];
+	"drums/Kick", "drums/Snare", "drums/HiHatClosed", "drums/CymbalCrash", "drums/CymbalRide", "drums/SnareSideStick"];
 
 	// populate menus with sound options
 	var menus = document.getElementsByClassName("menu");
