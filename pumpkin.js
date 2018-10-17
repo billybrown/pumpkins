@@ -1,9 +1,17 @@
+var preloadedSounds = {};
 
 window.onload = function () {
 	var sounds = [
 	"mandolin/Am", "mandolin/C", "mandolin/D", "mandolin/D7", "mandolin/Am",
 	"drums/Kick", "drums/Snare", "drums/HiHatClosed", "drums/CymbalCrash", "drums/CymbalRide", "drums/SnareSideStick"];
-
+    
+	for (var i = 0; i < sounds.length; i++) {
+        preloadedSounds[sounds[i]] = new Howl({
+          src: ['sounds/' + sounds[i] + ".mp3"]
+        });
+	}
+    console.log(preloadedSounds);
+    
 	// populate menus with sound options
 	var menus = document.getElementsByClassName("menu");
 	for (var m = 0; m < menus.length; m++) { 
@@ -84,8 +92,8 @@ function checkKey(e) {
 		elem = document.getElementById(id);
 		var soundName = elem.options[elem.selectedIndex].text;
 		console.log(soundName);
-		var sound = new Audio('sounds/' + soundName + '.mp3');
-		sound.play();
+        preloadedSounds[soundName].play();
+        
 	}
 }
 
