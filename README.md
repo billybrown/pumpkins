@@ -40,9 +40,12 @@ Halloween Makey Makey project
 ## Set List
 
 * Monster Mash by Bobby Pickett & The Crypt-Kickers
+* One Eyed one Horned Flying Purple People Eater
+* Swamp Thing: The Animated Series Theme (basically just Wild Thing by The Troggs)
 * Ghostbusters by Ray Parker Jr.
 * X-Files Theme
 * Halloween Theme by John Carpenter
+* JAWS Theme by Danny Elfman
 * Thriller by Michael Jackson
 * Tainted Love by Soft Cell
 * Howlin For You by The Black Keys

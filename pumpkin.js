@@ -1,26 +1,47 @@
 var preloadedSounds = {};
 
 window.onload = function () {
-	var sounds = [
-	"mandolin/Am", "mandolin/C", "mandolin/D", "mandolin/D7", "mandolin/Am",
-	"drums/Kick", "drums/Snare", "drums/HiHatClosed", "drums/CymbalCrash", "drums/CymbalRide", "drums/SnareSideStick"];
-    
-	for (var i = 0; i < sounds.length; i++) {
-        preloadedSounds[sounds[i]] = new Howl({
-          src: ['sounds/' + sounds[i] + ".mp3"]
-        });
+
+	// NOTE: each dictionary key is the folder name, each dictionary value is an array of filenames within the folder
+	var sounds = {
+		"mandolin": ["Am", "C", "D", "D7", "Am"],
+		"drums": ["Kick", "HiHatClosed", "Snare", "CymbalCrash", "CymbalRide", "SnareSideStick"]
+	};
+	
+	// pre-load all sound clips
+	for (var group in sounds)
+	{
+		var s = sounds[group];
+		for (var i = 0; i < s.length; i++) {
+			var id = group + "/" + s[i];
+			preloadedSounds[id] = new Howl({
+			  src: ['sounds/' + id + ".mp3"]
+			});
+		}
 	}
-    console.log(preloadedSounds);
-    
+	console.log(preloadedSounds);
+	
 	// populate menus with sound options
 	var menus = document.getElementsByClassName("menu");
 	for (var m = 0; m < menus.length; m++) { 
 		var menu = menus[m];
-		for (var i = 0; i < sounds.length; i++) { 
-			var option = document.createElement("option");
-			option.text = sounds[i];
-			menu.options.add(option, i);
+
+		for (var group in sounds)
+		{
+			// show keys as option group headings
+			var optgroup = document.createElement("optgroup");
+			optgroup.label = group;
+			menu.options.add(optgroup, menu.options.length);
+
+			var s = sounds[group];
+			for (var i = 0; i < s.length; i++) {
+				var option = document.createElement("option");
+				option.text = s[i];
+				option.data = group + "/" + s[i];
+				menu.options.add(option, menu.options.length);
+			}
 		}
+
 		menu.selectedIndex = m;
 	}
 
@@ -34,66 +55,82 @@ document.onkeydown = checkKey;
 function checkKey(e) {
 	e = e || window.event;
 
-	var id = "";
-	//console.log(e.keyCode);
+	var key = "";
+	console.log(e.keyCode);
 	switch (e.keyCode) {
 		case 38:
-			console.log('up');
-			id = "select_up";
+			key = "up";
 			break;
 		case 40:
-			console.log('down');
-			id = "select_down";
+			key = "down";
 			break;
 		case 37:
-			console.log('left');
-			id = "select_left";
+			key = "left";
 			break;
 		case 39:
-			console.log('right');
-			id = "select_right";
+			key = "right";
 			break;
 		case 32:
-			console.log('space');
-			id = "select_space";
+			key = "space";
 			break;
 		case 13:
-			console.log('enter');
-
+			key = "enter";
 			break;
 		case 87:
-			console.log('w');
-			id = "select_w";
+			key = "w";
 			break;
 		case 65:
-			console.log('a');
-			id = "select_a";
+			key = "a";
 			break;
 		case 83:
-			console.log('s');
-			id = "select_s";
+			key = "s";
 			break;
 		case 68:
-			console.log('d');
-			id = "select_d";
+			key = "d";
 			break;
 		case 70:
-			console.log('f');
-			id = "select_f";
+			key = "f";
 			break;
 		case 71:
-			console.log('g');
-			id = "select_g";
+			key = "g";
 			break;
 	}
 
-	if (id.length > 0)
+	console.log('key: ' + key);
+	if (key.length > 0)
 	{
-		elem = document.getElementById(id);
-		var soundName = elem.options[elem.selectedIndex].text;
+		elem = document.getElementById('sound_' + key);
+		var soundName = elem.options[elem.selectedIndex].data;
 		console.log(soundName);
-        preloadedSounds[soundName].play();
-        
+		var volume = document.getElementById('volume_' + key).value;
+		var pan = document.getElementById('pan_' + key).value;
+		preloadedSounds[soundName].play();
+
+		// TODO: can/should we set these values on change instead of every play?
+		// if more than one key is mapped to the same sound, then there might be some problems... 
+		preloadedSounds[soundName].volume(volume / 100);
+		preloadedSounds[soundName].stereo(pan / 50);
 	}
 }
 
+
+function changeTextValue(newVal, idToChange)
+{
+	document.getElementById(idToChange).innerHTML = newVal;
+}
+
+function showAdvanced(cb) {
+  var elements = document.getElementsByClassName("advanced_options");
+	for (var e = 0; e < elements.length; e++) { 
+		var elem = elements[e];
+
+		if (cb.checked)
+		{
+			elem.style.display = 'table-row';
+		}
+		else
+		{
+			elem.style.display = 'none';
+		}
+	}
+}

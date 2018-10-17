@@ -28,9 +28,11 @@
 
   <body>
     <h1 id="band_name">Pumpkin Jams</h1>
-
+    <input type="checkbox" id="enable_advanced" onclick='showAdvanced(this)'>Show Advanced Controls<br>
+    </br>
     <table>
       <tr>
+        <th>KEY</th>
         <th>left</th>
         <th>right</th>
         <th>up</th>
@@ -38,28 +40,74 @@
         <th>space</th>
       </tr>
       <tr>
+        <th>SOUND</th>
         <td>
-          <select class="menu" id="select_left"/>
+          <select class="menu" id="sound_left"/>
         </td>
         <td>
-          <select class="menu" id="select_right"/>
+          <select class="menu" id="sound_right"/>
         </td>
         <td>
-          <select class="menu" id="select_up"/>
+          <select class="menu" id="sound_up"/>
         </td>
         <td>
-          <select class="menu" id="select_down"/>
+          <select class="menu" id="sound_down"/>
         </td>
         <td>
-          <select class="menu" id="select_space"/>
+          <select class="menu" id="sound_space"/>
+        </td>
+      </tr>
+      <tr class="advanced_options" style="display: none;">
+        <th>VOLUME</th>
+        <td>
+          <input type="range" min="0" max="99" value="70" class="slider" id="volume_left" oninput="changeTextValue(this.value, 'volume_left_value')"/>
+          <span id="volume_left_value">70</span>
+        </td>
+        <td>
+          <input type="range" min="0" max="99" value="70" class="slider" id="volume_right" oninput="changeTextValue(this.value, 'volume_right_value')"/>
+          <span id="volume_right_value">70</span>
+        </td>
+        <td>
+          <input type="range" min="0" max="99" value="70" class="slider" id="volume_up" oninput="changeTextValue(this.value, 'volume_up_value')"/>
+          <span id="volume_up_value">70</span>
+        </td>
+        <td>
+          <input type="range" min="0" max="99" value="70" class="slider" id="volume_down" oninput="changeTextValue(this.value, 'volume_down_value')"/>
+          <span id="volume_down_value">70</span>
+        </td>
+        <td>
+          <input type="range" min="0" max="99" value="70" class="slider" id="volume_space" oninput="changeTextValue(this.value, 'volume_space_value')"/>
+          <span id="volume_space_value">70</span>
+        </td>
+      </tr>
+      <tr class="advanced_options" style="display: none;">
+        <th>PAN</th>
+        <td>
+          <input type="range" min="-50" max="50" value="0" class="slider" id="pan_left" oninput="changeTextValue(this.value, 'pan_left_value')"/>
+          <span id="pan_left_value">0</span>
+        </td>
+        <td>
+          <input type="range" min="-50" max="50" value="0" class="slider" id="pan_right" oninput="changeTextValue(this.value, 'pan_right_value')"/>
+          <span id="pan_right_value">0</span>
+        </td>
+        <td>
+          <input type="range" min="-50" max="50" value="0" class="slider" id="pan_up" oninput="changeTextValue(this.value, 'pan_up_value')"/>
+          <span id="pan_up_value">0</span>
+        </td>
+        <td>
+          <input type="range" min="-50" max="50" value="0" class="slider" id="pan_down" oninput="changeTextValue(this.value, 'pan_down_value')"/>
+          <span id="pan_down_value">0</span>
+        </td>
+        <td>
+          <input type="range" min="-50" max="50" value="0" class="slider" id="pan_space" oninput="changeTextValue(this.value, 'pan_space_value')"/>
+          <span id="pan_space_value">0</span>
         </td>
       </tr>
     </table>
-
     </br>
-    
     <table>
       <tr>
+        <th>KEY</th>
         <th>w</th>
         <th>a</th> 
         <th>s</th>
@@ -68,23 +116,78 @@
         <th>g</th>
       </tr>
       <tr>
+        <th>SOUND</th>
         <td>
-          <select class="menu" id="select_w"/>
+          <select class="menu" id="sound_w"/>
         </td>
         <td>
-          <select class="menu" id="select_a"/>
+          <select class="menu" id="sound_a"/>
         </td>
         <td>
-          <select class="menu" id="select_s"/>
+          <select class="menu" id="sound_s"/>
         </td>
         <td>
-          <select class="menu" id="select_d"/>
+          <select class="menu" id="sound_d"/>
         </td>
         <td>
-          <select class="menu" id="select_f"/>
+          <select class="menu" id="sound_f"/>
         </td>
         <td>
-          <select class="menu" id="select_g"/>
+          <select class="menu" id="sound_g"/>
+        </td>
+      </tr>
+      <tr class="advanced_options" style="display: none;">
+        <th>VOLUME</th>
+        <td>
+          <input type="range" min="0" max="99" value="70" class="slider" id="volume_w" oninput="changeTextValue(this.value, 'volume_w_value')"/>
+          <span id="volume_w_value">70</span>
+        </td>
+        <td>
+          <input type="range" min="0" max="99" value="70" class="slider" id="volume_a" oninput="changeTextValue(this.value, 'volume_a_value')"/>
+          <span id="volume_a_value">70</span>
+        </td>
+        <td>
+          <input type="range" min="0" max="99" value="70" class="slider" id="volume_s" oninput="changeTextValue(this.value, 'volume_s_value')"/>
+          <span id="volume_s_value">70</span>
+        </td>
+        <td>
+          <input type="range" min="0" max="99" value="70" class="slider" id="volume_d" oninput="changeTextValue(this.value, 'volume_d_value')"/>
+          <span id="volume_d_value">70</span>
+        </td>
+        <td>
+          <input type="range" min="0" max="99" value="70" class="slider" id="volume_f" oninput="changeTextValue(this.value, 'volume_f_value')"/>
+          <span id="volume_f_value">70</span>
+        </td>
+        <td>
+          <input type="range" min="0" max="99" value="70" class="slider" id="volume_g" oninput="changeTextValue(this.value, 'volume_g_value')"/>
+          <span id="volume_g_value">70</span>
+        </td>
+      </tr>
+      <tr class="advanced_options" style="display: none;">
+        <th>PAN</th>
+        <td>
+          <input type="range" min="-50" max="50" value="0" class="slider" id="pan_w" oninput="changeTextValue(this.value, 'pan_w_value')"/>
+          <span id="pan_w_value">0</span>
+        </td>
+        <td>
+          <input type="range" min="-50" max="50" value="0" class="slider" id="pan_a" oninput="changeTextValue(this.value, 'pan_a_value')"/>
+          <span id="pan_a_value">0</span>
+        </td>
+        <td>
+          <input type="range" min="-50" max="50" value="0" class="slider" id="pan_s" oninput="changeTextValue(this.value, 'pan_s_value')"/>
+          <span id="pan_s_value">0</span>
+        </td>
+        <td>
+          <input type="range" min="-50" max="50" value="0" class="slider" id="pan_d" oninput="changeTextValue(this.value, 'pan_d_value')"/>
+          <span id="pan_d_value">0</span>
+        </td>
+        <td>
+          <input type="range" min="-50" max="50" value="0" class="slider" id="pan_f" oninput="changeTextValue(this.value, 'pan_f_value')"/>
+          <span id="pan_f_value">0</span>
+        </td>
+        <td>
+          <input type="range" min="-50" max="50" value="0" class="slider" id="pan_g" oninput="changeTextValue(this.value, 'pan_g_value')"/>
+          <span id="pan_g_value">0</span>
         </td>
       </tr>
     </table>
