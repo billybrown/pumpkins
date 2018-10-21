@@ -59,19 +59,24 @@ function checkKey(e) {
 	e = e || window.event;
 
 	var key = "";
+	var visual = "pumpkin";
 	console.log(e.keyCode);
 	switch (e.keyCode) {
 		case 38:
 			key = "up";
+			visual = "ghost"
 			break;
 		case 40:
 			key = "down";
+			visual = "ghost"
 			break;
 		case 37:
 			key = "left";
+			visual = "ghost"
 			break;
 		case 39:
 			key = "right";
+			visual = "ghost"
 			break;
 		case 32:
 			key = "space";
@@ -124,6 +129,13 @@ function checkKey(e) {
 		    break;
 		  }
 		}
+
+		// deploy visual
+		// @todo, add other visuals
+		var div = document.createElement("DIV");
+		div.className += "v v-" + visual;
+		console.log(div);
+		document.getElementById('visuals').appendChild(div);
 	}
 }
 
