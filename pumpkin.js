@@ -1,4 +1,5 @@
 var preloadedSounds = {};
+var thTags = document.getElementsByTagName("th");
 
 window.onload = function () {
 
@@ -19,7 +20,6 @@ window.onload = function () {
 			});
 		}
 	}
-	console.log(preloadedSounds);
 	
 	// populate menus with sound options
 	var menus = document.getElementsByClassName("menu");
@@ -110,6 +110,17 @@ function checkKey(e) {
 		// if more than one key is mapped to the same sound, then there might be some problems... 
 		preloadedSounds[soundName].volume(volume / 100);
 		preloadedSounds[soundName].stereo(pan / 50);
+		
+		// Flash pressed key UI
+		for (var i = 0; i < thTags.length; i++) {
+		  if (thTags[i].textContent == key) {
+			thTags[i].setAttribute("class","flash");
+			setTimeout(function() {
+		        thTags[i].setAttribute("class","");
+		    }, 100);
+		    break;
+		  }
+		}
 	}
 }
 
