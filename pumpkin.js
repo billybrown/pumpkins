@@ -1,5 +1,5 @@
 var preloadedSounds = {};
-var thTags = document.getElementsByTagName("th");
+var thTags;
 
 window.onload = function () {
 
@@ -8,6 +8,9 @@ window.onload = function () {
 		"mandolin": ["Am", "C", "D", "D7", "Am"],
 		"drums": ["Kick", "HiHatClosed", "Snare", "CymbalCrash", "CymbalRide", "SnareSideStick"]
 	};
+	
+	// find elements to flash when triggered
+	thTags = document.getElementsByTagName("th");
 	
 	// pre-load all sound clips
 	for (var group in sounds)
