@@ -132,10 +132,11 @@ function checkKey(e) {
 
 		// deploy visual
 		// @todo, add other visuals
-		var div = document.createElement("DIV");
-		div.className += "v v-" + visual;
-		console.log(div);
-		document.getElementById('visuals').appendChild(div);
+		// @todo, double to-do, this really slows shit down.
+		// var div = document.createElement("DIV");
+		// div.className += "v v-" + visual;
+		// console.log(div);
+		// document.getElementById('visuals').appendChild(div);
 	}
 }
 
