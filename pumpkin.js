@@ -6,7 +6,8 @@ window.onload = function () {
 	// NOTE: each dictionary key is the folder name, each dictionary value is an array of filenames within the folder
 	var sounds = {
 		"mandolin": ["Am", "C", "D", "D7", "Am"],
-		"drums": ["Kick", "HiHatClosed", "Snare", "CymbalCrash", "CymbalRide", "SnareSideStick"]
+		"drums": ["Kick", "HiHatClosed", "Snare", "CymbalCrash", "CymbalRide", "SnareSideStick"],
+		"xylo": ["xylo-C", "xylo-C-hi"]
 	};
 	
 	// find elements to flash when triggered
@@ -132,7 +133,7 @@ function checkKey(e) {
 
 		// deploy visual
 		// @todo, add other visuals
-		// @todo, double to-do, this really slows shit down.
+		// @todo, double to-do, this really slows shit down ... so i took it out.
 		// var div = document.createElement("DIV");
 		// div.className += "v v-" + visual;
 		// console.log(div);
