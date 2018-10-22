@@ -6,7 +6,8 @@ window.onload = function () {
 	// NOTE: each dictionary key is the folder name, each dictionary value is an array of filenames within the folder
 	var sounds = {
 		"mandolin": ["Am", "C", "D", "D7", "Am"],
-		"drums": ["Kick", "HiHatClosed", "Snare", "CymbalCrash", "CymbalRide", "SnareSideStick"]
+		"drums": ["Kick", "HiHatClosed", "Snare", "CymbalCrash", "CymbalRide", "SnareSideStick"],
+		"guitar": ["G-short", "G-long", "Em-short", "Em-long", "C-short", "C-long", "D-short", "D-long"]
 	};
 	
 	// find elements to flash when triggered
