@@ -7,7 +7,7 @@ window.onload = function () {
 	var sounds = {
 		"mandolin": ["Am", "C", "D", "D7", "Am"],
 		"drums": ["Kick", "HiHatClosed", "Snare", "CymbalCrash", "CymbalRide", "SnareSideStick"],
-		"xylo": ["xylo-C", "xylo-C-hi"]
+		"guitar": ["G-short", "G-long", "Em-short", "Em-long", "C-short", "C-long", "D-short", "D-long"]
 	};
 	
 	// find elements to flash when triggered
