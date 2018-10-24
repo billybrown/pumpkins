@@ -86,9 +86,26 @@ function checkKey(e) {
 		case 13:
 			key = "enter";
 			break;
+		
+		case 81:
+			key = "q";
+			break;
 		case 87:
 			key = "w";
 			break;
+		case 69:
+			key = "e";
+			break;
+		case 82:
+			key = "r";
+			break;
+		case 84:
+			key = "t";
+			break;
+		case 89:
+			key = "y";
+			break;
+
 		case 65:
 			key = "a";
 			break;
@@ -103,6 +120,9 @@ function checkKey(e) {
 			break;
 		case 71:
 			key = "g";
+			break;
+		case 72:
+			key = "h";
 			break;
 	}
 
