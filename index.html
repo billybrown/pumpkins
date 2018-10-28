@@ -9,10 +9,17 @@
     <meta name="description" content="Make Time Club - Halloween Edition">
 
     <style>
+
+        * { box-sizing: border-box; }
+
         html {
-            padding: 20px;
             font-family: "Courier", serif;
         }
+
+        body, html {
+          margin: 0;
+        }
+
         table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
@@ -31,20 +38,29 @@
             color: #fff;
         }
 
-        @keyframes grow {
-         0% {
-            width: 1vw;
-            height: 1vh;
-            opacity: 1;
-          }
-          75% {
-            width: 95vw;
-            height: 95vh;
-            opacity: 1;
-          }
-          100% {
-            opacity: 0;
-          }
+        .attribution {
+          font-size: 12px;
+        }
+
+        #controls {
+          padding: 20px 40px 100px;
+          position: relative;
+        }
+
+        .dashboard {
+          position: fixed;
+          left:40px;
+          bottom: 0;
+          background: white;
+          padding: 10px 10px 10px 0;
+          box-sizing: border-box;
+          border-top: 1px solid black;
+        }
+
+        #switch-button,
+        .attribution {
+          display: inline-block;
+          vertical-align: middle;
         }
 
         #visuals {
@@ -57,22 +73,27 @@
           z-index: -1;
         }
 
-        .v {
+        #visuals > div {
           background-size: contain;
-          width: 95vw;
-          height: 95vh;
+          width: 1vw;
+          height: 1vh;
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%,-50%);
           background-repeat: no-repeat;
           background-position: center center;
-          animation: grow 1.25s ease;
           opacity: 0;
+          transition: height .2s ease, width .2s ease, opacity .2s ease;
         }
 
-        .v-pumpkin { background-image: url('visuals/pumpkin-1.svg');}
-        .v-ghost { background-image: url('visuals/ghost.svg');}
+        #visuals > div.go {
+          width: 95vw;
+          height: 95vh;
+          opacity: 1;
+        }
+
+        .hidden { display: none; }
     </style>
 
   </head>
@@ -331,7 +352,30 @@
         </tr>
       </table>
     </div><!--/#controls-->
-    <div id="visuals">
+    <div class="dashboard">
+      <button id="switch-button" onclick="toggleDisplay();">Show Visuals</button>
+      <div class="attribution">All graphics by <a target="_blank" href="https://thenounproject.com/katemaldjian/collection/halloween-doodles/">Kate Maldjian from the Noun Project</a></div>
+    </div>
+    <div id="visuals" class="hidden">
+      <div id="bat" style="background-image: url('visuals/bat.svg');"></div>
+      <div id="candle" style="background-image: url('visuals/candle.svg');"></div>
+      <div id="coffin" style="background-image: url('visuals/coffin.svg');"></div>
+      <div id="frank" style="background-image: url('visuals/frank.svg');"></div>
+      <div id="ghost" style="background-image: url('visuals/ghost.svg');"></div>
+      <div id="grave" style="background-image: url('visuals/grave.svg');"></div>
+      <div id="hat" style="background-image: url('visuals/hat.svg');"></div>
+      <div id="house" style="background-image: url('visuals/house.svg');"></div>
+      <div id="ghost" style="background-image: url('visuals/ghost.svg');"></div>
+      <div id="pot" style="background-image: url('visuals/pot.svg');"></div>
+      <div id="pumpkin-1" style="background-image: url('visuals/pumpkin-1.svg');"></div>
+      <div id="pumpkin-2" style="background-image: url('visuals/pumpkin-2.svg');"></div>
+      <div id="raven" style="background-image: url('visuals/raven.svg');"></div>
+      <div id="reaper" style="background-image: url('visuals/reaper.svg');"></div>
+      <div id="scarecrow" style="background-image: url('visuals/scarecrow.svg');"></div>
+      <div id="skull" style="background-image: url('visuals/skull.svg');"></div>
+      <div id="spider-web" style="background-image: url('visuals/spider-web.svg');"></div>
+      <div id="vampire-1" style="background-image: url('visuals/vampire-1.svg');"></div>
+      <div id="vampire-2" style="background-image: url('visuals/vampire-2.svg');"></div>
     </div><!--/#visuals-->
   </body>
 </html>

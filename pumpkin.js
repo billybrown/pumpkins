@@ -68,63 +68,75 @@ function checkKey(e) {
 	switch (e.keyCode) {
 		case 38:
 			key = "up";
-			visual = "ghost"
+			visual = "bat";
 			break;
 		case 40:
 			key = "down";
-			visual = "ghost"
+			visual = "candle";
 			break;
 		case 37:
 			key = "left";
-			visual = "ghost"
+			visual = "coffin";
 			break;
 		case 39:
 			key = "right";
-			visual = "ghost"
+			visual = "frank";
 			break;
 		case 32:
 			key = "space";
+			visual = "ghost";
 			break;
 		case 13:
 			key = "enter";
+			visual = "grave";
 			break;
-		
 		case 81:
 			key = "q";
+			visual = "hat";
 			break;
 		case 87:
 			key = "w";
+			visual = "house";
 			break;
 		case 69:
 			key = "e";
+			visual = "pot";
 			break;
 		case 82:
 			key = "r";
+			visual = "pumpkin-1";
 			break;
 		case 84:
 			key = "t";
+			visual = "pumpkin-2";
 			break;
 		case 89:
 			key = "y";
+			visual = "raven";
 			break;
-
 		case 65:
 			key = "a";
+			visual = "reaper";
 			break;
 		case 83:
 			key = "s";
+			visual = "skull";
 			break;
 		case 68:
 			key = "d";
+			visual = "spider-web";
 			break;
 		case 70:
 			key = "f";
+			visual = "vampire-1";
 			break;
 		case 71:
 			key = "g";
+			visual = "vampire-2";
 			break;
 		case 72:
 			key = "h";
+			visual = "scarecrow";
 			break;
 	}
 
@@ -155,12 +167,9 @@ function checkKey(e) {
 		}
 
 		// deploy visual
-		// @todo, add other visuals
-		// @todo, double to-do, this really slows shit down ... so i took it out.
-		// var div = document.createElement("DIV");
-		// div.className += "v v-" + visual;
-		// console.log(div);
-		// document.getElementById('visuals').appendChild(div);
+		var visual_dom = document.getElementById(visual);
+		visual_dom.className += " go";
+		setTimeout(function(){ visual_dom.classList.remove("go"); },200);
 	}
 }
 
@@ -183,5 +192,17 @@ function showAdvanced(cb) {
 		{
 			elem.style.display = 'none';
 		}
+	}
+}
+
+function toggleDisplay(cb) {
+	if (document.getElementById("visuals").classList.contains("hidden")) {
+		document.getElementById("controls").setAttribute("class","hidden");
+		document.getElementById("visuals").setAttribute("class","");
+		document.getElementById("switch-button").textContent='Show Controls';
+	} else {
+		document.getElementById("controls").setAttribute("class","");
+		document.getElementById("visuals").setAttribute("class","hidden");
+		document.getElementById("switch-button").textContent='Show Visuals';
 	}
 }
