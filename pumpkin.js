@@ -9,7 +9,8 @@ window.onload = function () {
 		"drums": ["Kick", "HiHatClosed", "Snare", "CymbalCrash", "CymbalRide", "SnareSideStick"],
 		"guitar": ["G-short", "G-long", "Em-short", "Em-long", "C-short", "C-long", "D-short", "D-long"],
 		"xylo": ["xylo-C-lo", "xylo-D", "xylo-E", "xylo-F", "xylo-G", "xylo-A", "xylo-B", "xylo-C-hi"],
-		"pumpkin": ["slap", "tap", "deep-slap"]
+		"pumpkin": ["slap", "tap", "deep-slap"],
+		"halloween": ["bubbling", "cat", "ghost", "laugh", "scream", "witch", "wolf"]
 	};
 	
 	// find elements to flash when triggered
