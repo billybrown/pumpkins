@@ -5,7 +5,7 @@ var bg;
 window.onload = function () {
 	
 	bg = new Howl({
-		src: ["raw-mash/Monster-Mash-Master-Mix.mp3"]
+		src: ["sounds/songs/Monster-Mash.mp3"]
 	});
 	
 	// NOTE: each dictionary key is the folder name, each dictionary value is an array of filenames within the folder
@@ -203,6 +203,7 @@ function showAdvanced(cb) {
 var playing = false;
 function changeBackingVolume(value) {
 	bg.volume(value / 100);
+	document.getElementById(idToChange).innerHTML = value;
 }
 function playBackingTrack(button) {
 	// TODO fix
