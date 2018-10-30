@@ -201,6 +201,9 @@ function showAdvanced(cb) {
 }
 
 var playing = false;
+function changeBackingVolume(value) {
+	bg.volume(value / 100);
+}
 function playBackingTrack(button) {
 	// TODO fix
 	if(playing) {
