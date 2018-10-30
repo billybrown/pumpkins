@@ -15,7 +15,8 @@ window.onload = function () {
 		"guitar": ["G-short", "G-long", "Em-short", "Em-long", "C-short", "C-long", "D-short", "D-long"],
 		"xylo": ["xylo-C-lo", "xylo-D", "xylo-E", "xylo-F", "xylo-G", "xylo-A", "xylo-B", "xylo-C-hi"],
 		"pumpkin": ["slap", "tap", "deep-slap"],
-		"halloween": ["bubbling", "cat", "ghost", "laugh", "scream", "witch", "wolf"]
+		"halloween": ["bubbling", "cat", "ghost", "laugh", "scream", "witch", "wolf"],
+		"mash": ["chorus-he-did-the-mash-high", "chorus-he-did-the-mash", "chorus-the-monster-mash", "lead-caught-on-in-flash", "lead-graveyard-smash", "lead-he-did-the-monster-mash", "lead-monster-mash", "lead-then-you-can-monster-mash", "lead-you-do-the-mash"]
 	};
 	
 	// find elements to flash when triggered
