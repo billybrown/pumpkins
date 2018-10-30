@@ -19,6 +19,29 @@ window.onload = function () {
 		"mash": ["chorus-he-did-the-mash-high", "chorus-he-did-the-mash", "chorus-the-monster-mash", "lead-caught-on-in-flash", "lead-graveyard-smash", "lead-he-did-the-monster-mash", "lead-monster-mash", "lead-then-you-can-monster-mash", "lead-you-do-the-mash"]
 	};
 	
+	// map each the keyboard keys to the desired sounds
+	var keymap_monstermash = {
+		"left": "drums/Kick",
+		"right": "drums/HiHatClosed",
+		"up": "drums/Snare",
+		"down": "drums/CymbalCrash",
+		"space": "mash/chorus-the-monster-mash",
+		"q": "guitar/G-short",
+		"w": "guitar/Em-short",
+		"e": "guitar/C-short",
+		"r": "guitar/D-short",
+		"t": "mash/chorus-he-did-the-mash",
+		"y": "mash/chorus-he-did-the-mash-high",
+		"a": "xylo/xylo-G",
+		"s": "xylo/xylo-E",
+		"d": "xylo/xylo-C-lo",
+		"f": "xylo/xylo-D",
+		"g": "mash/lead-he-did-the-monster-mash",
+		"h": "halloween/laugh",
+	}
+
+
+
 	// find elements to flash when triggered
 	thTags = document.getElementsByTagName("th");
 	
@@ -36,27 +59,49 @@ window.onload = function () {
 	
 	// populate menus with sound options
 	var menus = document.getElementsByClassName("menu");
-	for (var m = 0; m < menus.length; m++) { 
+	for (var m = 0; m < menus.length; m++)
+	{ 
 		var menu = menus[m];
 
 		for (var group in sounds)
 		{
-			// show keys as option group headings
+			// show dictionary keys as option group headings
 			var optgroup = document.createElement("optgroup");
 			optgroup.label = group;
 			menu.options.add(optgroup, menu.options.length);
 
+			// show dictionary values as sound options
 			var s = sounds[group];
-			for (var i = 0; i < s.length; i++) {
+			for (var i = 0; i < s.length; i++)
+			{
 				var option = document.createElement("option");
 				option.text = s[i];
 				option.data = group + "/" + s[i];
-				menu.options.add(option, menu.options.length);
+				optgroup.appendChild(option);
 			}
 		}
 
 		menu.selectedIndex = m;
 	}
+
+	// assign each keyboard key a specific sound based on pre-defined mapping
+	var menus = document.getElementsByClassName("menu");
+	for (var key in keymap_monstermash)
+	{
+		var key_idx = keymap_monstermash[key];
+
+		var menu_id = "sound_" + key
+		var menu = document.getElementById(menu_id);
+		for(var i = 0; i < menu.options.length; i++) 
+		{
+	        if(menu.options[i].data === key_idx) 
+	        {
+	        	menu.selectedIndex = i;
+	         	break;
+	        }
+    	}
+	}
+
 
 	var bandNames = ["Touch the Pumpkins", "Pumpkin Parade", "Pumpkin Chuckin'", "Smacking Pumpkins", "The Pumpkings"];
 	var bandIndex = Math.floor(Math.random() * Math.floor(bandNames.length));
