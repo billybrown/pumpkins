@@ -195,6 +195,10 @@ function showAdvanced(cb) {
 	}
 }
 
+function playBackingTrack() {
+	
+}
+
 function toggleDisplay(cb) {
 	if (document.getElementById("visuals").classList.contains("hidden")) {
 		document.getElementById("controls").setAttribute("class","hidden");
