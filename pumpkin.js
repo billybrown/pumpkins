@@ -1,8 +1,13 @@
 var preloadedSounds = {};
 var thTags;
+var bg;
 
 window.onload = function () {
-
+	
+	bg = new Howl({
+		src: ["/raw-mash/Monster Mash-Master Mix.mp3"]
+	});
+	
 	// NOTE: each dictionary key is the folder name, each dictionary value is an array of filenames within the folder
 	var sounds = {
 		"mandolin": ["Am", "C", "D", "D7", "Am"],
@@ -195,8 +200,16 @@ function showAdvanced(cb) {
 	}
 }
 
-function playBackingTrack() {
+var playing = false;
+function playBackingTrack(button) {
+	// TODO fix
+	if(playing)
+		return;
 	
+	button.innerHTML = "Playing...";
+	
+	playing = true;
+	bg.play();
 }
 
 function toggleDisplay(cb) {
