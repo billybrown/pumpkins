@@ -5,7 +5,7 @@ var bg;
 window.onload = function () {
 	
 	bg = new Howl({
-		src: ["sounds/songs/Monster-Mash.mp3"]
+		src: ["sounds/songs/Monster-Mash_no-chorus.mp3"]
 	});
 	
 	// NOTE: each dictionary key is the folder name, each dictionary value is an array of filenames within the folder
@@ -16,28 +16,28 @@ window.onload = function () {
 		"xylo": ["xylo-C-lo", "xylo-D", "xylo-E", "xylo-F", "xylo-G", "xylo-A", "xylo-B", "xylo-C-hi"],
 		"pumpkin": ["slap", "tap", "deep-slap"],
 		"halloween": ["bubbling", "cat", "ghost", "laugh", "scream", "witch", "wolf"],
-		"mash": ["chorus-he-did-the-mash-high", "chorus-he-did-the-mash", "chorus-the-monster-mash", "lead-caught-on-in-flash", "lead-graveyard-smash", "lead-he-did-the-monster-mash", "lead-monster-mash", "lead-then-you-can-monster-mash", "lead-you-do-the-mash"]
+		"mash": ["chorus-he-did-the-mash-high", "chorus-he-did-the-mash", "chorus-he-did-the-mash-2", "chorus-the-monster-mash", "lead-caught-on-in-flash", "lead-graveyard-smash", "lead-he-did-the-monster-mash", "lead-monster-mash", "lead-then-you-can-monster-mash", "lead-you-do-the-mash"]
 	};
 	
 	// map each the keyboard keys to the desired sounds
 	var keymap_monstermash = {
-		"left": "drums/Kick",
-		"right": "drums/HiHatClosed",
-		"up": "drums/Snare",
-		"down": "drums/CymbalCrash",
-		"space": "mash/chorus-the-monster-mash",
-		"q": "guitar/G-short",
-		"w": "guitar/Em-short",
-		"e": "guitar/C-short",
-		"r": "guitar/D-short",
-		"t": "mash/chorus-he-did-the-mash",
-		"y": "mash/chorus-he-did-the-mash-high",
-		"a": "xylo/xylo-G",
-		"s": "xylo/xylo-E",
-		"d": "xylo/xylo-C-lo",
-		"f": "xylo/xylo-D",
-		"g": "mash/lead-he-did-the-monster-mash",
-		"h": "halloween/laugh",
+		"left": "guitar/G-long",
+		"right": "guitar/Em-long",
+		"up": "guitar/C-long",
+		"down": "guitar/D-long",
+		"space": "mash/lead-you-do-the-mash",
+		"q": "halloween/cat",
+		"w": "halloween/ghost",
+		"e": "halloween/laugh",
+		"r": "halloween/scream",
+		"t": "halloween/witch",
+		"y": "halloween/wolf",
+		"a": "mash/chorus-he-did-the-mash",
+		"s": "mash/chorus-the-monster-mash",
+		"d": "mash/chorus-he-did-the-mash-2",
+		"f": "mash/chorus-he-did-the-mash-high",
+		"g": "drums/Kick",
+		"h": "drums/Snare",
 	}
 
 
